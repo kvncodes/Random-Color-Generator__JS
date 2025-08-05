@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap");
+
+@layer reset {
+	/* 1. Use a more-intuitive box-sizing model */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	/* 2. Remove default margin */
+	* {
+		margin: 0;
+	}
+
+	/* 3. Enable keyword animations */
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			interpolate-size: allow-keywords;
+		}
+	}
+
+	body {
+		/* 4. Add accessible line-height */
+		line-height: 1.5;
+		/* 5. Improve text rendering */
+		-webkit-font-smoothing: antialiased;
+	}
+
+	/* 6. Improve media defaults */
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	/* 7. Inherit fonts for form controls */
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	/* 8. Avoid text overflows */
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	/* 9. Improve line wrapping */
+	p {
+		text-wrap: pretty;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+	}
+
+	/*
+  10. Create a root stacking context
+*/
+	#root,
+	#__next {
+		isolation: isolate;
+	}
+}
+
+body {
+	font-family: "Mozilla Text", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 2rem;
+}
+
+.random-color-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: clamp(1.5rem, 3vw, 2.2rem);
+	background-color: rgba(78, 78, 78, 0.8);
+	border-radius: 1rem;
+	padding-block: clamp(1.5rem, 4vw + 0.5rem, 3rem);
+	padding-inline: clamp(1rem, 4vw + 0.5rem, 2rem);
+	border: 1px solid rgb(174, 174, 174);
+}
+
+.random-color-container h1 {
+	color: white;
+	font-size: clamp(1.1rem, 3vw, 1.75rem);
+	line-height: clamp(2px, 2vw, normal);
+}
+
+.random-color-container button {
+	border: none;
+	padding-inline: clamp(1rem, 4vw + 0.5rem, 2.2rem);
+	padding-block: clamp(0.6rem, 2vw + 0.5rem, 0.9rem);
+	border-radius: 26px;
+	font-size: clamp(0.9rem, 2vw, 1.3rem);
+	transition: padding-inline 0.2s ease;
+}
+
+.random-color-container button:hover {
+	padding-inline: 3rem;
+}
